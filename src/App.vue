@@ -18,17 +18,13 @@ const currLocation = 'Home' // Will be populated by router
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-height: 567px;
     width: 987px;
     border: 1px solid pink;
 }
 
 .displayArea {
-    display: flex;
     border: 1px solid green;
-    max-width: 100%;
-    align-self: stretch;
 }
 
 .footer {

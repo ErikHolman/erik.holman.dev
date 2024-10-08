@@ -4,7 +4,7 @@ const props = defineProps(['pageName'])
 </script>
 
 <template>
-    <div>
+    <div class="theHeader">
         <div class="header">
             <div class="links">
                 <a href="/"> erik.holman.dev</a> | {{ props.pageName }}
@@ -85,6 +85,11 @@ const props = defineProps(['pageName'])
 </template>
 
 <style scoped>
+.theHeader {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
 .subheader {
     background-color: rgb(113, 151, 199);
     display: flex;
