@@ -45,7 +45,13 @@ const props = defineProps(['pageName'])
                 <button type="submit">Search</button>
             </form>
             <div class="manage">
-                <a href="/help">Help</a> | <a href="https://vuejs.org">Sign Out</a>
+                <a href="/help">Help</a> |
+                <a
+                    title="I'm built with Vue, click here to learn about it!"
+                    href="https://vuejs.org"
+                    target="_blank"
+                    >Sign Out</a
+                >
             </div>
             <!-- 'Help' will lead to a help page tbd, but related to erik.holman.dev -->
             <!-- 'Sign Out' will lead VueJS homepage since this site is Vue -->
@@ -89,6 +95,7 @@ const props = defineProps(['pageName'])
     display: flex;
     flex-direction: column;
     align-self: flex-start;
+    width: 100%;
 }
 .subheader {
     background-color: rgb(113, 151, 199);
@@ -114,7 +121,7 @@ const props = defineProps(['pageName'])
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80vw;
+    width: 100%;
     height: 3em;
     color: white;
     background-color: rgb(0, 0, 255);
