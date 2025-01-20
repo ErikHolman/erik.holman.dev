@@ -20,17 +20,16 @@ const currLocation = 'Home' // Will be populated by router
     flex-direction: column;
     min-height: 567px;
     width: 987px;
-    border: 1px solid pink;
 }
 
 .displayArea {
-    border: 1px solid green;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
 }
 
 .footer {
     display: flex;
     height: 4em;
-    border: 1px solid red;
     background-color: #222222;
 }
 
