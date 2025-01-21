@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import TheHeader from '@/components/TheHeader.vue'
-import HomeView from '@/views/HomeView.vue'
-const currLocation = 'Home' // Will be populated by router
 </script>
 
 <template>
     <div class="content">
-        <TheHeader :pageName="currLocation" />
+        <TheHeader />
         <div class="displayArea">
-            <HomeView />
+            <RouterView />
         </div>
         <div class="footer"></div>
     </div>
@@ -25,6 +23,7 @@ const currLocation = 'Home' // Will be populated by router
 .displayArea {
     border-left: 1px solid grey;
     border-right: 1px solid grey;
+    height: 567px;
 }
 
 .footer {

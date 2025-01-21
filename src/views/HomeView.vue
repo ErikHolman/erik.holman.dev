@@ -274,10 +274,10 @@ const dayFormat = todayDate.toLocaleDateString()
             width: 100%;
             height: 20%;
         }
-        .blogArea {
-        }
-        .blurbs {
-        }
+        // .blogArea {
+        // }
+        // .blurbs {
+        // }
     }
 }
 </style>

@@ -1,15 +1,10 @@
-<script setup lang="ts">
-// import { defineProps } from 'vue'
-const props = defineProps(['pageName'])
-</script>
+<script setup lang="ts"></script>
 
 <template>
     <div class="theHeader">
         <div class="header">
             <div class="links">
-                <a href="/"> erik.holman.dev</a> | {{ props.pageName }}
-                <!-- erik.holman.dev should be a router link  home -->
-                <!-- pageName is a variable that will update current page -->
+                <RouterLink to="/">erik.holman.dev</RouterLink> | {{ $route.name }}
             </div>
             <form id="search" class="search">
                 <fieldset>
@@ -45,7 +40,7 @@ const props = defineProps(['pageName'])
                 <button type="submit">Search</button>
             </form>
             <div class="manage">
-                <a href="/help">Help</a> |
+                <RouterLink to="/help">Help</RouterLink> |
                 <a
                     title="I'm built with Vue, click here to learn about it!"
                     href="https://vuejs.org"
@@ -54,38 +49,37 @@ const props = defineProps(['pageName'])
                 >
             </div>
             <!-- 'Help' will lead to a help page tbd, but related to erik.holman.dev -->
-            <!-- 'Sign Out' will lead VueJS homepage since this site is Vue -->
         </div>
         <div class="subheader">
-            <li>Home</li>
+            <li><RouterLink to="/">Home</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Browse</li>
+            <li><RouterLink to="/browse">Browse</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Search</li>
+            <li><RouterLink to="/search">Search</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Invite</li>
+            <li><RouterLink to="/invite">Invite</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Film</li>
+            <li><RouterLink to="/film">Film</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Mail</li>
+            <li><RouterLink to="/mail">Mail</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Blog</li>
+            <li><RouterLink to="/blog">Blog</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Favorites</li>
+            <li><RouterLink to="/favorites">Favorites</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Forum</li>
+            <li><RouterLink to="/forum">Forum</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Groups</li>
+            <li><RouterLink to="/groups">Groups</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Events</li>
+            <li><RouterLink to="/events">Events</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Videos</li>
+            <li><RouterLink to="/videos">Videos</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Music</li>
+            <li><RouterLink to="/music">Music</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Comedy</li>
+            <li><RouterLink to="/comedy">Comedy</RouterLink></li>
             <span class="spacer">|</span>
-            <li>Classifieds</li>
+            <li><RouterLink to="/classifieds">Classifieds</RouterLink></li>
         </div>
     </div>
 </template>
@@ -96,68 +90,78 @@ const props = defineProps(['pageName'])
     flex-direction: column;
     align-self: flex-start;
     width: 100%;
-}
-.subheader {
-    background-color: rgb(113, 151, 199);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 1.5em;
-    color: white;
-    flex-direction: row;
-}
 
-.subheader li {
-    list-style-type: none;
-    font-size: smaller;
-}
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 3em;
+        color: white;
+        background-color: rgb(0, 0, 255);
+        border-radius: 0.25em 0.25em 0 0;
+        padding: 0.5em;
+        align-items: center;
 
-.subheader .spacer {
-    color: black;
-    margin: 0, 0.25em;
-    font-size: smaller;
-}
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 3em;
-    color: white;
-    background-color: rgb(0, 0, 255);
-    border-radius: 0.25em 0.25em 0 0;
-    padding: 0.5em;
-    align-items: center;
-}
+        .links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 25%;
+        }
 
-form {
-    display: flex;
-    flex-direction: row;
-    border: none;
-    width: 50%;
-    align-items: center;
-}
+        form {
+            display: flex;
+            flex-direction: row;
+            border: none;
+            width: 50%;
+            align-items: center;
 
-form fieldset {
-    border: none;
-    display: flex;
-    flex-direction: row;
-}
+            fieldset {
+                border: none;
+                display: flex;
+                flex-direction: row;
+            }
 
-form fieldset .searchItem,
-form button {
-    margin-left: 1em;
-}
+            .searchItem,
+            button {
+                margin-left: 1em;
+            }
 
-form #searchTerm {
-    height: 2.25em;
-}
+            #searchTerm {
+                height: 2.25em;
+            }
+            button {
+                height: 2.6em;
+                background-color: white;
+            }
+        }
+    }
 
-form button {
-    height: 2.6em;
-    background-color: white;
-}
+    .subheader {
+        background-color: rgb(113, 151, 199);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 1.5em;
+        color: white;
+        flex-direction: row;
 
-@media (min-width: 1024px) {
+        .spacer {
+            color: black;
+            margin: 0, 0.25em;
+            font-size: smaller;
+            cursor: pointer;
+        }
+
+        li {
+            list-style-type: none;
+            font-size: smaller;
+
+            a {
+                color: white;
+            }
+        }
+    }
 }
 </style>
