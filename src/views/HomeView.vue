@@ -101,9 +101,9 @@ const dayFormat = todayDate.toLocaleDateString()
             </div>
         </div>
         <div class="rightContent">
-            <dev class="networkStatus border"
-                ><h2>Erik is looking for a full time remote position.</h2></dev
-            >
+            <div class="networkStatus border">
+                <h2>Erik is looking for a full time remote position.</h2>
+            </div>
             <div class="blogArea">
                 <div>Erik's Latest Blog Entry [Subscribe to this Blog]</div>
             </div>
@@ -119,8 +119,8 @@ const dayFormat = todayDate.toLocaleDateString()
 </template>
 
 <style scoped lang="scss">
-@import '../styles/_variables.scss';
-@import '../styles/_utils.scss';
+@use '../styles/variables';
+@use '../styles/_utils';
 
 .homeContainer {
     display: flex;
@@ -157,11 +157,11 @@ const dayFormat = todayDate.toLocaleDateString()
                 a {
                     background-color: transparent;
                     text-align: center;
-                    color: $darkBlue;
+                    color: variables.$darkBlue;
                 }
                 a:hover {
-                    background-color: $darkBack;
-                    color: $lightGrey;
+                    background-color: variables.$darkBack;
+                    color: variables.$lightGrey;
                     font-weight: 500;
                     width: 100%;
                 }
@@ -187,8 +187,8 @@ const dayFormat = todayDate.toLocaleDateString()
 
             table {
                 thead {
-                    background-color: $lightBlue;
-                    color: $white;
+                    background-color: variables.$lightBlue;
+                    color: variables.$white;
 
                     th {
                         padding-left: 0.5em;
@@ -216,8 +216,8 @@ const dayFormat = todayDate.toLocaleDateString()
                             }
 
                             a:hover {
-                                background-color: $darkBack;
-                                color: $lightGrey;
+                                background-color: variables.$darkBack;
+                                color: variables.$lightGrey;
                                 font-weight: 500;
                                 width: 100%;
                             }
@@ -257,8 +257,8 @@ const dayFormat = todayDate.toLocaleDateString()
                 color: black;
             }
             a:hover {
-                background-color: $darkBack;
-                color: $lightGrey;
+                background-color: variables.$darkBack;
+                color: variables.$lightGrey;
                 font-weight: 500;
                 width: 100%;
             }
