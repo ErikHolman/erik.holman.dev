@@ -19,9 +19,11 @@ div {
 
     .hero {
         height: 300px;
-        width: 300px;
-        background: url('../assets/Erik_Profile.png') no-repeat center;
+        width: 100%;
+        background: url('../assets/Erik_Looking.gif') no-repeat center;
         background-size: contain;
+        border-bottom: 5px solid grey;
+        background-color: white;
     }
 
     code {
